@@ -1,0 +1,18 @@
+// {{ index }}. {{ title }}
+
+pub struct Solution;
+
+impl Solution {
+    pub fn solver() {}
+}
+
+// --- instant test codes ---
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_case_1() {
+        // assert_eq!(2 + 2, 4);
+    }
+}

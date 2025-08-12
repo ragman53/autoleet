@@ -1,0 +1,41 @@
+use std::io::{self, BufRead};
+
+// Call the implementation of LeetCode answers
+mod solver;
+
+use solver::Solution;
+
+fn main() {
+    println!("--- Local Runner ---");
+    println!("Enter vector elements separated by spaces (e.g., 2 7 11 15)");
+
+    let stdin = io::stdin();
+    let mut lines = stdin.lock().lines();
+
+    // Read a first line, and transfer it to Vec<i32>;
+    let nums: Vec<132> = lines
+        .next()
+        .expect("Failed to read first line")
+        .unwrap()
+        .split_whitespace()
+        .map(|s| s.parse().expect("Failed to parse number"))
+        .collect();
+
+    println!("Enter target integer (e.g., 9):");
+
+    // Read a second line, and transfer it to i32
+    let target: i32 = lines
+        .next()
+        .expect("Failed to read second line")
+        .unwrap()
+        .parse()
+        .expect("Failed to parse target");
+
+    // Execute the function in solver.rs
+    println!(
+        "\nRunning colver::Solution::two_sum({:?}, {})",
+        &nums, target
+    );
+    let result = Solution::two_sum(nums, target);
+    println!("Result; {:?}", result);
+}
